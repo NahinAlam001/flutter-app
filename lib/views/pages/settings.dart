@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
-  const Settings({super.key});
+  const Settings({super.key, required this.title});
+  final String title;
   @override
   State<StatefulWidget> createState() => _SettingsState();
 }
@@ -14,12 +15,23 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
+      appBar: AppBar(title: Text(widget.title)),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
+              ElevatedButton(
+                child: Text('Dialog'),
+                onPressed: () => showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text('Dialog'),
+                    content: Text('Content'),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
               TextField(
                 controller: controller,
                 decoration: InputDecoration(border: OutlineInputBorder()),
@@ -55,10 +67,16 @@ class _SettingsState extends State<Settings> {
                 },
               ),
               GestureDetector(
-                onTap: () {
-                  print('Image tapped');
-                },
+                onTap: () {},
                 child: Image.asset('assets/images/bg.jpeg'),
+              ),
+              FilledButton(
+                child: Text('Button'),
+                onPressed: () {
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text('Button pressed')));
+                },
               ),
             ],
           ),

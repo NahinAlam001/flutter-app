@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/data/notifier.dart';
+import 'package:learn_flutter/views/pages/welcome_page.dart';
 import 'package:learn_flutter/views/widget_tree.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Learn Flutter',
           theme: isDarkMode ? ThemeData.light() : ThemeData.dark(),
-          home: MyHome(),
+          home: WelcomePage(),
         );
       },
     );
