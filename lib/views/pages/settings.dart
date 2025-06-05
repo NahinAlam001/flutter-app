@@ -28,6 +28,12 @@ class _SettingsState extends State<Settings> {
                   builder: (context) => AlertDialog(
                     title: Text('Dialog'),
                     content: Text('Content'),
+                    actions: [
+                      TextButton(
+                        child: Text('Close'),
+                        onPressed: () => Navigator.pop(context),
+                      ),
+                    ],
                   ),
                 ),
               ),
