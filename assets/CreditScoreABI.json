@@ -1,0 +1,307 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "nid",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "finalCreditScore",
+        "type": "uint8"
+      }
+    ],
+    "name": "BorrowerAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "nid",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "newFinalCreditScore",
+        "type": "uint8"
+      }
+    ],
+    "name": "BorrowerUpdated",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "WEIGHT_ACCOUNT_BALANCE",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "WEIGHT_CREDIT_AGE",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "WEIGHT_PAYMENT_HISTORY",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "WEIGHT_PROFESSIONAL_RISK",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "WEIGHT_TOTAL_REMAINING_LOAN",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "WEIGHT_TOTAL_TRANSACTIONS",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_nid",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_accountBalanceScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_paymentHistoryScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_totalTransactionsScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_totalRemainingLoanScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_creditAgeScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "_professionalRiskFactorScore",
+        "type": "uint8"
+      }
+    ],
+    "name": "addOrUpdateBorrower",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "borrowers",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "nid",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "uint8",
+        "name": "accountBalanceScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "paymentHistoryScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "totalTransactionsScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "totalRemainingLoanScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "creditAgeScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "professionalRiskFactorScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint8",
+        "name": "finalCreditScore",
+        "type": "uint8"
+      },
+      {
+        "internalType": "bool",
+        "name": "exists",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_nid",
+        "type": "string"
+      }
+    ],
+    "name": "getBorrowerDetails",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "nid",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "uint8",
+            "name": "accountBalanceScore",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "paymentHistoryScore",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "totalTransactionsScore",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "totalRemainingLoanScore",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "creditAgeScore",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "professionalRiskFactorScore",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint8",
+            "name": "finalCreditScore",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "exists",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct CreditScore.Borrower",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
